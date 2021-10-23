@@ -144,10 +144,13 @@ def formregistrareventos_info():
     try:
         if request.files:
             image = request.files["image"]
+            #Guardar imagen dentro de carpeta
+            #Recuperar url de la imagen
             print(image)
 
             documents ={
-                "url": "https://www.nombres.pro/wp-content/uploads/2015/10/Nombre-para-grupos-de-amigos.jpg"
+                #regresar url
+                "url": "{ image }"
             }
             _headers = {"Ocp-Apim-Subscription-Key": skey}
             _response=requests.post(vision_url, headers=_headers, json=documents)
