@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Dogodki EVNTS</title>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Ingresar datos de evento</h3></div>
+                                    <div class="card-body">
+                                        <form action="/formregistrareventos_info" method="POST" enctype="multipart/form-data">
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div style="margin-top: 50px;"  class="form-group">
+                                                        
+                                                        <input type="file" class="custom-file-input" name="image" id="image">
+                                                        <label class="custom-file-label" for="image">Imagen del evento...</label>
+                                                    </div>
+                                                </div>                                          
+                                            </div>  
+                                            <button type="submit">Subir imagen y calcular</button>    
+
+                                        </form>    
+                                        <form action="/formregistrareventos" method="POST" enctype="multipart/form-data">
+                                            <!-- <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="nombre_evento">Nombre de evento</label><input class="form-control py-4" id="nombre_evento" name="nombre_evento" type="text" placeholder="Ingrese nombre del evento" required/></div>
+                                                </div>
+                                            </div> -->
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputnumberh">Número de hombres</label><input class="form-control py-4" id="inputnumberh" name="numberh" type="text" placeholder="Ingrese un número" value="{{ tol_hombres }}" required/></div>
+                                                </div>
+                                                                                          </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputnumberm">Número de mujeres</label><input class="form-control py-4" id="inputnumberm" name="numberm"type="text" placeholder="Ingrese un número" value="{{ tol_mujeres }}" required/></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputage">Edad promedio</label><input class="form-control py-4" id="inputage" name="age" type="text" placeholder="Ingrese un número" value="{{ prom_edad }}" required/></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="small mb-1" for="inputevent">Nombre del evento</label><input class="form-control py-4" id="inputevent" name="event" type="text" placeholder="Festival, boda, etc..." required/></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!--div class="form-group mt-4 mb-0"><a class="btn btn-primary btn-block" >Crear</a></div-->
+                                            <button type="submit">Crear</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2019</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </body>
+</html>
